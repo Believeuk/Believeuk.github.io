@@ -14,10 +14,20 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        :root {
+            --primary: #0468eb;
+            --secondary: #ffbe00;
+            --accent: #25D366;
+            --dark: #2d2d2d;
+            --light: #f8f9fa;
+            --gray: #555;
+        }
+        
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -33,7 +43,7 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: #25D366;
+            background: var(--accent);
             color: white;
             text-decoration: none;
             border-radius: 30px;
@@ -53,11 +63,11 @@
             text-align: center;
             margin-bottom: 50px;
             font-size: 36px;
-            color: #2d2d2d;
+            color: var(--dark);
         }
         
         .section-title span {
-            color: #0468eb; /* WIX blue */
+            color: var(--primary);
         }
         
         /* Header Styles */
@@ -80,11 +90,11 @@
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: #0468eb;
+            color: var(--primary);
         }
         
         .logo span {
-            color: #ffbe00; /* WIX yellow */
+            color: var(--secondary);
         }
         
         .nav-links {
@@ -98,18 +108,18 @@
         
         .nav-links a {
             text-decoration: none;
-            color: #2d2d2d;
+            color: var(--dark);
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .nav-links a:hover {
-            color: #0468eb;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0468eb 0%, #2e8bef 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #2e8bef 100%);
             color: white;
             padding: 150px 0 100px;
             text-align: center;
@@ -149,12 +159,12 @@
         
         .about-text p {
             margin-bottom: 15px;
-            color: #555;
+            color: var(--gray);
         }
         
         .about-image {
             flex: 1;
-            background: #0468eb;
+            background: var(--primary);
             height: 400px;
             border-radius: 10px;
             display: flex;
@@ -182,6 +192,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            text-align: center;
         }
         
         .service-card:hover {
@@ -190,13 +201,237 @@
         
         .service-card i {
             font-size: 40px;
-            color: #0468eb;
+            color: var(--primary);
             margin-bottom: 20px;
         }
         
         .service-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: #f1f5f9;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background: #e9ecef;
+            color: var(--gray);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: white;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Process Section */
+        .process {
+            background: #f1f5f9;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 50px 0;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 auto 20px;
+        }
+        
+        .step-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #2e8bef 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* Contact Section */
@@ -223,7 +458,7 @@
         .contact-item i {
             width: 50px;
             height: 50px;
-            background: #0468eb;
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -235,7 +470,7 @@
         
         /* Footer */
         footer {
-            background: #2d2d2d;
+            background: var(--dark);
             color: white;
             padding: 50px 0 20px;
             text-align: center;
@@ -260,7 +495,7 @@
         }
         
         .social-links a:hover {
-            color: #0468eb;
+            color: var(--primary);
         }
         
         /* Responsive Design */
@@ -280,6 +515,15 @@
             .nav-links {
                 display: none;
             }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -293,6 +537,8 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -322,6 +568,7 @@
                     <p>Hello! I'm a professional WIX developer with expertise in creating stunning, responsive, and user-friendly websites that help businesses establish a strong online presence.</p>
                     <p>With a keen eye for design and a focus on functionality, I build websites that not only look great but also deliver exceptional user experiences and drive results.</p>
                     <p>My approach combines creative design with technical expertise to develop websites that are tailored to your specific needs and goals.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
                 </div>
                 <div class="about-image">
                     WIX Developer Portfolio
@@ -350,7 +597,279 @@
                     <h3>Website Maintenance</h3>
                     <p>Regular updates, security checks, and content modifications to keep your website running smoothly.</p>
                 </div>
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your website's visibility with search engine optimization techniques tailored for WIX platforms.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Responsiveness</h3>
+                    <p>Ensure your website looks great and functions perfectly on all devices and screen sizes.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Content Integration</h3>
+                    <p>Seamlessly integrate your content, images, and media into a beautifully designed WIX website.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>WIX Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>WIX Editor</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>WIX Velo</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>E-Commerce</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Design</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>UI/UX Design</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Responsive Design</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Branding</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Client Communication</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Project Management</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SEO & Analytics</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Recent <span>Projects</span></h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">E-Commerce Store</div>
+                    <div class="project-content">
+                        <h3>Fashion Boutique Online Store</h3>
+                        <p>Complete e-commerce solution with product catalog, shopping cart, and secure checkout.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WIX</span>
+                            <span class="project-tag">E-Commerce</span>
+                            <span class="project-tag">Responsive</span>
+                        </div>
+                        <a href="#contact" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Restaurant Website</div>
+                    <div class="project-content">
+                        <h3>Gourmet Restaurant Website</h3>
+                        <p>Elegant website with menu display, reservation system, and location map.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WIX</span>
+                            <span class="project-tag">Booking</span>
+                            <span class="project-tag">Food</span>
+                        </div>
+                        <a href="#contact" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Portfolio Website</div>
+                    <div class="project-content">
+                        <h3>Photographer Portfolio</h3>
+                        <p>Visual portfolio website with gallery, client testimonials, and booking system.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WIX</span>
+                            <span class="project-tag">Portfolio</span>
+                            <span class="project-tag">Gallery</span>
+                        </div>
+                        <a href="#contact" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client <span>Testimonials</span></h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Working with this WIX developer was a fantastic experience. My new website exceeded all expectations and has already generated more business leads."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div>
+                            <h4>John Doe</h4>
+                            <p>Boutique Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The website delivered was exactly what we needed for our restaurant. The reservation system integrated seamlessly and our customers love it!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <h4>Sarah Miller</h4>
+                            <p>Restaurant Manager</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I'm thrilled with my photography portfolio website. It showcases my work beautifully and the contact form has brought me several new clients."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div>
+                            <h4>Michael Johnson</h4>
+                            <p>Professional Photographer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">My <span>Process</span></h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>We discuss your needs, goals, and vision for the project.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>I create a project plan and timeline for your approval.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Design</h3>
+                        <p>I design mockups and prototypes for your feedback.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Development</h3>
+                        <p>I build your website with regular progress updates.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Launch</h3>
+                        <p>Your website goes live after final testing and approval.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how I can help bring your vision to life with a professional WIX website.</p>
+            <a href="https://wa.me/16103162048" class="btn">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
         </div>
     </section>
 
@@ -375,6 +894,13 @@
                             <p>@believe.h0</p>
                         </div>
                     </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@wixdeveloper.com</p>
+                        </div>
+                    </div>
                     <a href="https://wa.me/16103162048" class="btn">
                         <i class="fab fa-whatsapp"></i> Start Conversation
                     </a>
@@ -392,6 +918,8 @@
                 <div class="social-links">
                     <a href="https://www.tiktok.com/@believe.h0" target="_blank"><i class="fab fa-tiktok"></i></a>
                     <a href="https://wa.me/16103162048" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
                 </div>
                 <p>&copy; 2023 WIX Developer Portfolio. All rights reserved.</p>
             </div>
